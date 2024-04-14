@@ -1,0 +1,6 @@
+*.terraform*
+*.tfstate*
+*.tfvars
+.connection.env
+aks_kubeconfig
+

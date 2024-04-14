@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-nginx
+  namespace: rekrutacja
+spec:
+  selector:
+    matchLabels:
+      app: my-nginx
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: my-nginx
+    spec:
+      containers:
+      - name: my-nginx
+        image: cristopherus/my-nginx
+        ports:
+        - containerPort: 80
+          protocol: TCP
